@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/newsOverviewFragment">
+
+    <fragment
+        android:id="@+id/newsOverviewFragment"
+        android:name="com.daysofkotlin.android.newsOverview.NewsOverviewFragment"
+        android:label="overview_fragment"
+        tools:layout="@layout/fragment_news_overview">
+
+        <action
+            android:id="@+id/action_showDetail"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.daysofkotlin.android.newsDetails.NewsDetailsFragment"
+        android:label="NewsDetailsFragment"
+        tools:layout="@layout/fragment_new_details">
+
+        <argument
+            android:name="selectedArticle"
+            app:argType="com.daysofkotlin.android.network.Articles"/>
+
+    </fragment>
+
+</navigation>
